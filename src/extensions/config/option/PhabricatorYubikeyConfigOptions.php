@@ -8,11 +8,11 @@ final class PhabricatorYubikeyConfigOptions
   extends PhabricatorApplicationConfigOptions {
 
   public function getName() {
-    return pht('Yubikey support');
+    return pht('Yubikey OTP Support');
   }
 
   public function getDescription() {
-    return pht('Configure Yubikey integration.');
+    return pht('Configure Yubikey OTP integration.');
   }
 
   public function getFontIcon() {
@@ -28,11 +28,11 @@ final class PhabricatorYubikeyConfigOptions
       /* -- Yubikey server options. -- */
       $this->newOption('yubicloud.client-id', 'int', null)
         ->setLocked(true)
-        ->setDescription(pht('YubiCloud authentication Client ID.')),
+        ->setDescription(pht('YubiCloud API client ID.')),
       $this->newOption('yubicloud.secret-key', 'string', null)
         ->setLocked(true)
         ->setHidden(true)
-        ->setDescription(pht('API key for YubiCloud authentication.')),
+        ->setDescription(pht('YubiCloud secret API key.')),
     );
   }
 }

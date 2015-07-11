@@ -7,7 +7,7 @@ final class PhabricatorYubikeyAuthFactor extends PhabricatorAuthFactor {
   }
 
   public function getFactorName() {
-    return pht('Yubikey (via YubiCloud)');
+    return pht('Yubikey OTP');
   }
 
   public function getFactorDescription() {
@@ -33,7 +33,7 @@ final class PhabricatorYubikeyAuthFactor extends PhabricatorAuthFactor {
 
       if ($okay) {
         $config = $this->newConfigForUser($user)
-          ->setFactorName(pht('Yubikey (via YubiCloud)'))
+          ->setFactorName(pht('Yubikey OTP (using Public YubiCloud)'))
           ->setFactorSecret($userkey);
 
         return $config;
