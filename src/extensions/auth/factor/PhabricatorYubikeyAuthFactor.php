@@ -135,7 +135,7 @@ final class PhabricatorYubikeyAuthFactor extends PhabricatorAuthFactor {
       return false;
     }
 
-    $client_id  = strval(PhabricatorEnv::getEnvConfig('yubicloud.client-id'));
+    $client_id  = (string)PhabricatorEnv::getEnvConfig('yubicloud.client-id');
     $secret_key = PhabricatorEnv::getEnvConfig('yubicloud.secret-key');
 
     $keyid_matches = $userkey->openEnvelope() === self::getOTPUserSecret($otp);
