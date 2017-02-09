@@ -75,7 +75,7 @@ final class PhabricatorYubikeyAuthFactor extends PhabricatorAuthFactor {
       pht('Afterwords, use your Yubikey to enter an OTP code below:'));
 
     $form->appendChild(
-      id(new AphrontFormTextControl())
+      id(new AphrontFormPasswordControl())
         ->setLabel(pht('OTP Code'))
         ->setName('otpcode')
         ->setValue($code)
@@ -93,7 +93,7 @@ final class PhabricatorYubikeyAuthFactor extends PhabricatorAuthFactor {
     }
 
     $form->appendChild(
-      id(new AphrontFormTextControl())
+      id(new AphrontFormPasswordControl())
         ->setName($this->getParameterName($config, 'otpcode'))
         ->setLabel(pht('OTP Code'))
         ->setCaption(pht('Factor Name: %s', $config->getFactorName()))
